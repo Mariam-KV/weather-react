@@ -3,8 +3,7 @@ import Weather from "./weather";
 function App() {
   return (
     <div className="App">
-      <h1> HELLO REACT!</h1>
-      <Weather city="Paris" />
+      <Weather />
     </div>
   );
 }

@@ -1,0 +1,11 @@
+.search {
+  height: 44px;
+  width: 300px;
+}
+.btn {
+  border-radius: 4px;
+  color: #fff;
+  height: 44px;
+  margin: 0 5px;
+  padding: 6px 12px;
+}
