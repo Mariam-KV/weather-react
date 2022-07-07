@@ -3,7 +3,7 @@ import axios from "axios";
 export default function Weather(props) {
   function showWeather(response) {
     alert(
-      `Current temperature in ${props.city} is ${Math.round(
+      ` Current temperature in ${props.city} is ${Math.round(
         response.data.main.temp
       )} C`
     );
