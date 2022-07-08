@@ -10,7 +10,7 @@ export default function Weather() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=a6c5c5bc66fcc2c9a1f394f061243f10`;
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=2610fc391e59a1d4c413f050d38f672d`;
     axios.get(url).then(showInfo);
   }
   function handleChange(event) {
