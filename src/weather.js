@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./weather.css";
 import Moment from "./moment";
-import ReactAnimatedWeather from "react-animated-weather";
+
 import Forecast from "./forecast";
 export default function Weather() {
   let [city, setCity] = useState();
@@ -29,40 +29,52 @@ export default function Weather() {
   }
 
   return (
-    <div className="col-6 p-5 m-5 border">
-      <div className="row ">
-        <div className="col">
-          <h1 className="text-center">Weather app</h1>
-          <form onSubmit={handleSubmit}>
-            <input
-              className="search"
-              placeholder="Enter a city"
-              type="search"
-              onChange={handleChange}
-            />
-            <input type="submit" className="btn btn-primary" value="Search" />
-            <input type="submit" className="btn btn-success" value="Current" />
-          </form>
-          <h3>{all.name}</h3>
-          <h5>
-            <Moment />
-          </h5>
-          <p>{all.description}</p>
+    <div>
+      <div className="col-6 p-5 mt-5 mx-5 border">
+        <div className="row ">
+          <div className="col">
+            <h1 className="text-center">Weather app</h1>
+            <form onSubmit={handleSubmit}>
+              <input
+                className="search"
+                placeholder="Enter a city"
+                type="search"
+                onChange={handleChange}
+              />
+              <input type="submit" className="btn btn-primary" value="Search" />
+              <input
+                type="submit"
+                className="btn btn-success"
+                value="Current"
+              />
+            </form>
+            <h3>{all.name}</h3>
+            <h5>
+              <Moment />
+            </h5>
+            <p>{all.description}</p>
+          </div>
+          <div className="row align-items-center">
+            <div className="col-2">
+              <img src={all.icon} alt="iconOfWeather" />{" "}
+            </div>
+            <div className="col-5">
+              <h2 className="temp">{Math.round(all.temp)}°C</h2>
+            </div>
+            <div className="col-4">
+              <p>Humidity: {all.humidity}% </p>
+              <p>Wind: {all.wind}km/h</p>
+            </div>
+          </div>
+          <Forecast />
         </div>
-        <div className="row align-items-center">
-          <div className="col-2">
-            <img src={all.icon} />{" "}
-          </div>
-          <div className="col-5">
-            <h2 className="temp">{Math.round(all.temp)}°C</h2>
-          </div>
-          <div className="col-4">
-            <p>Humidity: {all.humidity}% </p>
-            <p>Wind: {all.wind}km/h</p>
-          </div>
-        </div>
-        <Forecast />
       </div>
+      <p className="ms-5">
+        <a href="https://github.com/Mashawabupr/weather-react">
+          Open-source code,
+        </a>
+        by <a href="https://github.com/Mashawabupr">Mariam Kvirkviia</a>
+      </p>
     </div>
   );
 }

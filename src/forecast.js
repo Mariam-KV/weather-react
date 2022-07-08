@@ -1,6 +1,5 @@
 import React from "react";
-let data = new Date();
-let day = data.getDay();
+
 let days = [
   "Sunday",
   "Monday",
