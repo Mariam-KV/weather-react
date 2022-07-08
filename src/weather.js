@@ -3,7 +3,7 @@ import axios from "axios";
 import "./weather.css";
 import Moment from "./moment";
 import ReactAnimatedWeather from "react-animated-weather";
-
+import Forecast from "./forecast";
 export default function Weather() {
   let [city, setCity] = useState();
   let [all, setAll] = useState({});
@@ -61,14 +61,7 @@ export default function Weather() {
             <p>Wind: {all.wind}km/h</p>
           </div>
         </div>
-        <div className="row">
-          <div className="col-2">ff</div>
-          <div className="col-2">ff</div>
-          <div className="col-2">ff</div>
-          <div className="col-2">ff</div>
-          <div className="col-2">ff</div>
-          <div className="col-2">ff</div>
-        </div>
+        <Forecast />
       </div>
     </div>
   );
