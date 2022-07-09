@@ -1,21 +1,54 @@
 import React from "react";
 import "./weather.css";
-let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+import ShowIcons from "./icons";
 
 export default function Forecast() {
   return (
     <div className="listFix col-11">
-      <ul>
-        {days.map(function(el, index) {
-          return <li key={index}>{el}</li>;
-        })}
-      </ul>
-
-      <ul>
-        {days.map(function(index) {
-          return <li key={index}>23 °C</li>;
-        })}
-      </ul>
+      <div className="row">
+        <div className="col-2">
+          <p>Monday</p>
+          <ShowIcons all="01d" size={23} />
+          <p>
+            <span>28</span> 21
+          </p>
+        </div>
+        <div className="col-2">
+          <p>Monday</p>
+          <ShowIcons all="01d" size={23} />
+          <p>
+            <span>28</span> 21
+          </p>
+        </div>
+        <div className="col-2">
+          <p>Monday</p>
+          <ShowIcons all="01d" size={23} />
+          <p>
+            <span>28</span> 21
+          </p>
+        </div>
+        <div className="col-2">
+          <p>Monday</p>
+          <ShowIcons all="01d" size={23} />
+          <p>
+            <span>28</span> 21
+          </p>
+        </div>
+        <div className="col-2">
+          <p>Monday</p>
+          <ShowIcons all="01d" size={23} />
+          <p>
+            <span>28</span> 21
+          </p>
+        </div>
+        <div className="col-2">
+          <p>Monday</p>
+          <ShowIcons all="01d" size={23} />
+          <p>
+            <span>28</span> 21
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
