@@ -1,7 +1,8 @@
 import React from "react";
-
+import ShowIcons from "./icons";
 import "./weather.css";
 import Moment from "./moment";
+
 export default function WeatherInfo(props) {
   return (
     <div>
@@ -13,9 +14,7 @@ export default function WeatherInfo(props) {
         <p>{props.all.description}</p>
       </div>
       <div className="row align-items-center">
-        <div className="col-2">
-          <img src={props.all.icon} alt="iconOfWeather" />{" "}
-        </div>
+        <ShowIcons all={props.all.icon} />
         <div className="col-5">
           <h2 className="temp">
             <span className="gradus">{Math.round(props.all.temp)}</span>

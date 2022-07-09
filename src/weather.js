@@ -15,7 +15,7 @@ export default function Weather(props) {
       description: response.data.weather[0].main,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
     });
     setReady(true);
   }
@@ -33,33 +33,38 @@ export default function Weather(props) {
   }
   if (ready) {
     return (
-      <div className="p-2 mt-5 mx-5 border">
-        <div className="row ">
-          <div className="col">
-            <form onSubmit={handleSubmit}>
-              <input
-                onChange={handleChange}
-                className="search col-9"
-                placeholder="Enter a city"
-                type="search"
-                autoFocus="on"
-              />
-              <input
-                type="submit"
-                className="btn btn-primary col-2 ms-4"
-                value="Search"
-              />
-            </form>
-            <WeatherInfo all={all} />
-            <Forecast />
+      <div>
+        <div className="p-2 mt-5 mx-5 border">
+          <div className="row ">
+            <div className="col">
+              <form onSubmit={handleSubmit}>
+                <input
+                  onChange={handleChange}
+                  className="search col-9"
+                  placeholder="Enter a city"
+                  type="search"
+                  autoFocus="on"
+                />
+                <input
+                  type="submit"
+                  className="btn btn-primary col-2 ms-4"
+                  value="Search"
+                />
+              </form>
+              <WeatherInfo all={all} />
+              <Forecast />
+            </div>
           </div>
         </div>
-        <p className="ms-5">
-          <a href="https://github.com/Mashawabupr/weather-react">
-            Open-source code,
-          </a>
-          by <a href="https://github.com/Mashawabupr">Mariam Kvirkviia</a>
-        </p>
+        <div>
+          {" "}
+          <p className="ms-5">
+            <a href="https://github.com/Mashawabupr/weather-react">
+              Open-source code,
+            </a>
+            by <a href="https://github.com/Mashawabupr">Mariam Kvirkviia</a>
+          </p>
+        </div>
       </div>
     );
   } else {
