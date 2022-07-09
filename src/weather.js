@@ -59,10 +59,29 @@ export default function Weather(props) {
         <div>
           {" "}
           <p className="ms-5">
-            <a href="https://github.com/Mashawabupr/weather-react">
-              Open-source code,
+            <a
+              href="https://github.com/Mashawabupr/weather-react"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Open-source code ,{" "}
             </a>
-            by <a href="https://github.com/Mashawabupr">Mariam Kvirkviia</a>
+            by{" "}
+            <a
+              href="https://github.com/Mashawabupr"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Mariam Kvirkviia
+            </a>{" "}
+            and{" "}
+            <a
+              href="https://sparkling-monstera-9f4c60.netlify.app/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              hosted on Netlify
+            </a>
           </p>
         </div>
       </div>

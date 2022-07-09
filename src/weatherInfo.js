@@ -2,7 +2,7 @@ import React from "react";
 import ShowIcons from "./icons";
 import "./weather.css";
 import Moment from "./moment";
-
+import Temperature from "./temperature";
 export default function WeatherInfo(props) {
   return (
     <div>
@@ -16,10 +16,7 @@ export default function WeatherInfo(props) {
       <div className="row align-items-center">
         <ShowIcons all={props.all.icon} />
         <div className="col-5">
-          <h2 className="temp">
-            <span className="gradus">{Math.round(props.all.temp)}</span>
-            <span className="celsius">°C</span>
-          </h2>
+          <Temperature temp={props.all.temp} />
         </div>
         <div className="col-4">
           <p>Humidity: {props.all.humidity}% </p>

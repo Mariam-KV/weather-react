@@ -14,10 +14,12 @@
   color: black;
   font-size: 64px;
 }
-.celsius {
+.celsius,
+.faren {
   color: rgb(70, 68, 68);
   position: relative;
-  top: -20px;
+  top: -30px;
+  font-size: 24px;
 }
 ul {
   margin: 0;
