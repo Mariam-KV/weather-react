@@ -1,16 +1,23 @@
 .search {
   height: 44px;
-  width: 300px;
+  max-width: 600px;
 }
+
 .btn {
   border-radius: 4px;
   color: #fff;
   height: 44px;
   margin: 0 5px;
-  padding: 6px 12px;
+  text-align: center;
 }
-.temp {
+.gradus {
+  color: black;
   font-size: 64px;
+}
+.celsius {
+  color: rgb(70, 68, 68);
+  position: relative;
+  top: -20px;
 }
 ul {
   margin: 0;

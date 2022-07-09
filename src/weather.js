@@ -30,25 +30,24 @@ export default function Weather() {
 
   return (
     <div>
-      <div className="col-6 p-5 mt-5 mx-5 border">
+      <div className="p-2 mt-5 mx-5 border">
         <div className="row ">
           <div className="col">
-            <h1 className="text-center">Weather app</h1>
             <form onSubmit={handleSubmit}>
               <input
-                className="search"
+                className="search col-9"
                 placeholder="Enter a city"
                 type="search"
                 onChange={handleChange}
+                autoFocus="on"
               />
-              <input type="submit" className="btn btn-primary" value="Search" />
               <input
                 type="submit"
-                className="btn btn-success"
-                value="Current"
+                className="btn btn-primary col-2 ms-4"
+                value="Search"
               />
             </form>
-            <h3>{all.name}</h3>
+            <h3 className="pt-3 text-dark">{all.name}</h3>
             <h5>
               <Moment />
             </h5>
@@ -59,7 +58,10 @@ export default function Weather() {
               <img src={all.icon} alt="iconOfWeather" />{" "}
             </div>
             <div className="col-5">
-              <h2 className="temp">{Math.round(all.temp)}°C</h2>
+              <h2 className="temp">
+                <span className="gradus">{Math.round(all.temp)}</span>
+                <span className="celsius">°C</span>
+              </h2>
             </div>
             <div className="col-4">
               <p>Humidity: {all.humidity}% </p>

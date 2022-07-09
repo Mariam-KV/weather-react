@@ -1,26 +1,19 @@
 import React from "react";
-
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Satuday",
-];
+import "./weather.css";
+let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 export default function Forecast() {
   return (
-    <div>
+    <div className="listFix col-11">
       <ul>
-        {days.map(function (el, index) {
+        {days.map(function(el, index) {
           return <li key={index}>{el}</li>;
         })}
       </ul>
+
       <ul>
-        {days.map(function (index) {
-          return <li key={index}>23 C</li>;
+        {days.map(function(index) {
+          return <li key={index}>23 °C</li>;
         })}
       </ul>
     </div>
