@@ -16,6 +16,8 @@ export default function Weather(props) {
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
       icon: response.data.weather[0].icon,
+      lon: response.data.coord.lon,
+      lat: response.data.coord.lat,
     });
     setReady(true);
   }
@@ -52,7 +54,7 @@ export default function Weather(props) {
                 />
               </form>
               <WeatherInfo all={all} />
-              <Forecast />
+              <Forecast all={all} />
             </div>
           </div>
         </div>

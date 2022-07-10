@@ -5,7 +5,7 @@ import Moment from "./moment";
 import Temperature from "./temperature";
 export default function WeatherInfo(props) {
   return (
-    <div>
+    <div className="ps-2">
       <div>
         <h3 className="pt-3 text-dark">{props.all.name}</h3>
         <h5>
