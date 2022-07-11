@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./weather.css";
 import Days from "./days";
 
@@ -11,7 +11,9 @@ export default function Forecast(props) {
     setAllInfo(response.data.daily);
     setReady(true);
   }
-
+  useEffect(() => {
+    setReady(false);
+  }, [props.all.lat, props.all.lon]);
   if (ready) {
     return (
       <div className="listFix m-2 col">
@@ -23,6 +25,8 @@ export default function Forecast(props) {
                   <Days data={day} />
                 </div>
               );
+            } else {
+              return null;
             }
           })}
         </div>
