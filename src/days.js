@@ -17,7 +17,7 @@ export default function Days(props) {
 
       <ShowIcons all={props.data.weather[0].icon} size={44} />
       <p>
-        <strong>{max()}°</strong>
+        <strong>{max()}° </strong>
         {min()}°
       </p>
     </div>

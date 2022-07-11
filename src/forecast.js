@@ -8,7 +8,7 @@ export default function Forecast(props) {
   let [allInfo, setAllInfo] = useState(null);
   let [ready, setReady] = useState(false);
   function showDaily(response) {
-    setAllInfo(response.data.daily[0]);
+    setAllInfo(response.data.daily);
     setReady(true);
   }
 
@@ -16,9 +16,15 @@ export default function Forecast(props) {
     return (
       <div className="listFix m-2 col">
         <div className="row">
-          <div className="col-2">
-            <Days data={allInfo} />
-          </div>
+          {allInfo.map(function(day, index) {
+            if (index < 6) {
+              return (
+                <div className="col-2" key={index}>
+                  <Days data={day} />
+                </div>
+              );
+            }
+          })}
         </div>
       </div>
     );
