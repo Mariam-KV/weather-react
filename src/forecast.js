@@ -1,57 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import "./weather.css";
-import ShowIcons from "./icons";
+import Days from "./days";
+
 import "./forecast.css";
-
+import axios from "axios";
 export default function Forecast(props) {
-  let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${props.all.lat}&lon=${props.all.lon}&units=metric&appid=125f8237195e09a35e85a1f3b2772e52`;
+  let [allInfo, setAllInfo] = useState(null);
+  let [ready, setReady] = useState(false);
+  function showDaily(response) {
+    setAllInfo(response.data.daily[0]);
+    setReady(true);
+  }
 
-  return (
-    <div className="listFix m-2 col">
-      <div className="row">
-        <div className="col-2">
-          <p>Mon</p>
-          <ShowIcons all="01d" />
-          <p>
-            <strong>28°</strong> 21°
-          </p>
-        </div>
-        <div className="col-2">
-          <p>Mon</p>
-          <ShowIcons all="01d" />
-          <p>
-            <strong>28</strong> 21
-          </p>
-        </div>
-        <div className="col-2">
-          <p>Monday</p>
-          <ShowIcons all="01d" />
-          <p>
-            <strong>28</strong> 21
-          </p>
-        </div>
-        <div className="col-2">
-          <p>Monday</p>
-          <ShowIcons all="01d" />
-          <p>
-            <span>28</span> 21
-          </p>
-        </div>
-        <div className="col-2">
-          <p>Monday</p>
-          <ShowIcons all="01d" />
-          <p>
-            <span>28</span> 21
-          </p>
-        </div>
-        <div className="col-2">
-          <p>Monday</p>
-          <ShowIcons all="01d" />
-          <p>
-            <span>28</span> 21
-          </p>
+  if (ready) {
+    return (
+      <div className="listFix m-2 col">
+        <div className="row">
+          <div className="col-2">
+            <Days data={allInfo} />
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${props.all.lat}&lon=${props.all.lon}&units=metric&appid=2610fc391e59a1d4c413f050d38f672d`;
+    axios.get(url).then(showDaily);
+
+    return null;
+  }
 }

@@ -27,7 +27,7 @@ export default function ShowIcons(props) {
       <ReactAnimatedWeather
         icon={icons[props.all]}
         color="grey"
-        size={65}
+        size={props.size}
         animate={true}
       />{" "}
     </div>

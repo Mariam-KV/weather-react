@@ -14,7 +14,7 @@ export default function WeatherInfo(props) {
         <p>{props.all.description}</p>
       </div>
       <div className="row align-items-center">
-        <ShowIcons all={props.all.icon} />
+        <ShowIcons all={props.all.icon} size={64} />
         <div className="col-5">
           <Temperature temp={props.all.temp} />
         </div>
